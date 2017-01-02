@@ -101,7 +101,7 @@ renderInventory(key) {
 }
 
   render() {
-    const logout = <button onClick={this.logout}>Log Out!</button>
+    const logout = <button onClick={this.logout }>Log Out!</button>
     if(!this.state.uid) {
       return <div>{this.renderLogin()}</div>
     }
@@ -125,15 +125,15 @@ renderInventory(key) {
       </div>
     )
   }
+  static propTypes = {
+    fishes: React.PropTypes.object.isRequired,
+    updateFish: React.PropTypes.func.isRequired,
+    removeFish: React.PropTypes.func.isRequired,
+    addFish: React.PropTypes.func.isRequired,
+    loadSamples: React.PropTypes.func.isRequired,
+    storeId: React.PropTypes.string.isRequired
+  };
 }
 
-Inventory.propTypes = {
-  fishes: React.PropTypes.object.isRequired,
-  updateFish: React.PropTypes.func.isRequired,
-  removeFish: React.PropTypes.func.isRequired,
-  addFish: React.PropTypes.func.isRequired,
-  loadSamples: React.PropTypes.func.isRequired,
-  storeId: React.PropTypes.string.isRequired
-};
 
 export default Inventory;
