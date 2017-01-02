@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
 
-    this.addFish = this.addFish.bind(this);
+    // this.addFish = this.addFish.bind(this);
     // this.updateFish = this.updateFish.bind(this);
     // this.removeFish = this.removeFish.bind(this);
     // this.loadSamples = this.loadSamples.bind(this);
@@ -35,7 +35,7 @@ class App extends React.Component {
     base.removeBinding(this.ref);
   }
 
-  addFish(fish) {
+  addFish = (fish) => {
     //update our state
     const fishes = {...this.state.fishes};
     //add in our new fish
@@ -43,7 +43,7 @@ class App extends React.Component {
     fishes[`fish-${timeStamp}`] = fish;
     //set state
     this.setState({ fishes: fishes })
-  }
+  };
 
   updateFish = (key, updatedFish) => {
     const fishes = {...this.state.fishes};
